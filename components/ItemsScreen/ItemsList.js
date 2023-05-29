@@ -1,11 +1,16 @@
 import { StyleSheet, Text, View } from "react-native";
+import { items } from "../../dummy-data";
+import Item from "./Item";
 
-const ItemsList = () => {
+const ItemsList = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
       <Text style={styles.title}>Items</Text>
-
-      <View style={styles.container}></View>
+      <View style={styles.container}>
+        {items.map((item) => (
+          <Item key={item.id} item={item} navigation={navigation} />
+        ))}
+      </View>
     </View>
   );
 };
@@ -24,5 +29,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     borderWidth: 1,
     borderColor: "#2824C3",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    padding: 8,
   },
 });

@@ -12,20 +12,6 @@ const HomeScreen = ({ navigation }) => {
       >
         <Text style={styles.btnText}>Go to Items Screen</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => navigation.navigate("Specific Item")}
-      >
-        <Text style={styles.btnText}>Go to Specific Item Screen</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => navigation.navigate("Add Item")}
-      >
-        <Text style={styles.btnText}>Go to Add Item Screen</Text>
-      </TouchableOpacity>
     </View>
   );
 };

@@ -6,14 +6,25 @@ const ActionButtons = () => {
     <View style={styles.wrapper}>
       <Ionicons.Button
         style={styles.btn}
-        name="add-outline"
+        name="pencil-outline"
         backgroundColor="#fff"
         color="#000"
         borderRadius={9999}
       >
-        <Text style={{ fontFamily: "Hanken-Semibold" }}>Add</Text>
+        <Text style={{ fontFamily: "Hanken-Semibold" }}>Modify</Text>
       </Ionicons.Button>
-      <View style={{ marginLeft: 8 }}>
+      <View style={{ marginLeft: 4 }}>
+        <Ionicons.Button
+          style={styles.btn}
+          name="trash-outline"
+          backgroundColor="#fff"
+          color="#000"
+          borderRadius={9999}
+        >
+          <Text style={{ fontFamily: "Hanken-Semibold" }}>Delete</Text>
+        </Ionicons.Button>
+      </View>
+      <View style={{ marginLeft: 4 }}>
         <Ionicons.Button
           style={styles.btn}
           name="print-outline"
@@ -34,7 +45,7 @@ const styles = StyleSheet.create({
   wrapper: {
     paddingTop: 10,
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "center",
   },
   btn: {
     borderWidth: 1,

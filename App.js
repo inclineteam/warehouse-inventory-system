@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
 import ItemsScreen from "./screens/ItemsScreen";
 import SpecificItem from "./screens/SpecificItemScreen";
-import AddItem from "./screens/AddItem";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
@@ -67,11 +66,6 @@ export default function App() {
         <Stack.Screen
           name="Specific Item"
           component={SpecificItem}
-          options={headerStyles}
-        />
-        <Stack.Screen
-          name="Add Item"
-          component={AddItem}
           options={headerStyles}
         />
       </Stack.Navigator>

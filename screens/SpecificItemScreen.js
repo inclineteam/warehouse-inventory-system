@@ -1,10 +1,14 @@
-import { View, Text } from "react-native";
+import ScreenLayout from "../components/ScreenLayout";
+import Nav from "../components/Nav";
+import { SISActionButtons, SISDetails } from "../components/SpecificItemScreen";
 
-const SpecificItem = () => {
+const SpecificItem = ({ route }) => {
   return (
-    <View>
-      <Text>Specific Item</Text>
-    </View>
+    <ScreenLayout>
+      <Nav />
+      <SISDetails item={route.params.item} />
+      <SISActionButtons />
+    </ScreenLayout>
   );
 };
 
