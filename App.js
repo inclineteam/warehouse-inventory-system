@@ -6,25 +6,51 @@ import HomeScreen from "./screens/HomeScreen";
 import ItemsScreen from "./screens/ItemsScreen";
 import SpecificItem from "./screens/SpecificItemScreen";
 import AddItem from "./screens/AddItem";
+import { useFonts } from "expo-font";
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from "react";
+
+SplashScreen.preventAutoHideAsync();
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Hanken-Grotesk": require("./assets/fonts/HankenGrotesk-VariableFont_wght.ttf"),
+    "Hanken-Semibold": require("./assets/fonts/HankenGrotesk-SemiBold.ttf"),
+    "Hanken-Bold": require("./assets/fonts/HankenGrotesk-Bold.ttf"),
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return <Text>Loading ...</Text>;
+  }
+
   const headerStyles = {
     contentStyle: {
       backgroundColor: "#fff",
     },
+    headerTintColor: "#fff",
+    headerTitleStyle: {
+      fontWeight: "bold",
+      fontSize: 18,
+    },
     headerShadowVisible: false,
     headerStyle: {
-      backgroundColor: "#f1f5f9",
+      backgroundColor: "#2824C3",
     },
   };
 
   return (
-    <NavigationContainer>
+    <NavigationContainer onReady={onLayoutRootView}>
       <Stack.Navigator
         screenOptions={{
-          animation: "slide_from_right",
+          animation: "fade_from_bottom",
           animationDuration: 100,
         }}
       >
@@ -49,15 +75,7 @@ export default function App() {
           options={headerStyles}
         />
       </Stack.Navigator>
+      <StatusBar style="inverted" />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
     marginBottom: 14,
   },
   btnText: {
-    fontSize: 16,
+    fontFamily: "Hanken-Semibold",
+    fontSize: 14,
     fontWeight: "600",
     textAlign: "center",
     color: "#334155",
