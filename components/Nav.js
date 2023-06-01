@@ -2,9 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import logo from "../assets/logo.png";
 import React from "react";
 
-
 const Nav = () => {
-
   const [showMenu, setShowMenu] = React.useState(true);
   return (
     <View style={styles.nav}>
@@ -22,7 +20,7 @@ const Nav = () => {
         </Text>
       </View>
 
-      {/** 
+      {/**
        * Floating menu button
        */}
 
@@ -30,15 +28,25 @@ const Nav = () => {
        * This is the floating menu from scratch
        * hide it for now
        * position: "absolute",
-       */}      
-      
-      <View style={{ flex: 1 ,flexDirection: "column", alignItems: "center", position: "absolute", display: showMenu ? 'flex' : "none", left: "70%"}}>
+       */}
+
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "column",
+          alignItems: "center",
+          position: "absolute",
+          display: showMenu ? "flex" : "none",
+          left: "70%",
+          top: 100,
+          backgroundColor: "red",
+        }}
+      >
+        <Text style={{ color: "white" }}>top is set to `100`</Text>
         <Text>Home</Text>
         <Text>Inventory</Text>
         <Text>Reports</Text>
       </View>
-
-      
     </View>
   );
 };
