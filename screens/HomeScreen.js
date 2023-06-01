@@ -2,16 +2,23 @@
 // you can remove, or change the content of this screen
 
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Nav from "../components/Nav";
 
 const HomeScreen = ({ navigation }) => {
+  // return (
+  //   <View style={styles.container}>
+  //     <TouchableOpacity
+  //       style={styles.btn}
+  //       onPress={() => navigation.navigate("Items")}
+  //     >
+  //       <Text style={styles.btnText}>Go to Items Screen</Text>
+  //     </TouchableOpacity>
+  //   </View>
+  // );
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.btn}
-        onPress={() => navigation.navigate("Items")}
-      >
-        <Text style={styles.btnText}>Go to Items Screen</Text>
-      </TouchableOpacity>
+      <Nav />
     </View>
   );
 };
