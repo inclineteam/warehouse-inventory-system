@@ -3,18 +3,16 @@
 
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Nav from "../components/Nav";
+import React from "react";
 
 const HomeScreen = ({ navigation }) => {
-  // return (
-  //   <View style={styles.container}>
-  //     <TouchableOpacity
-  //       style={styles.btn}
-  //       onPress={() => navigation.navigate("Items")}
-  //     >
-  //       <Text style={styles.btnText}>Go to Items Screen</Text>
-  //     </TouchableOpacity>
-  //   </View>
-  // );
+  
+  // remove header
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+  }, [navigation]);
 
   return (
     <View style={styles.container}>
