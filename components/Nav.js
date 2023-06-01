@@ -64,30 +64,39 @@ const Nav = ({ navigation, menu }) => {
       >
         
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >Home<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >Acc. Information<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >Inventory<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >Stocks<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Items") }}}
         >Items<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >Transactions<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >Returns<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >About<Image></Image></Text>
         <Text
+        style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
         onPress={() => {{ navigation.navigate("Home") }}}
         >WIS Contacts<Image></Image></Text>
         
