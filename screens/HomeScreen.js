@@ -16,7 +16,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Nav />
+      <Nav menu={false} navigation={navigation} />
     </View>
   );
 };
@@ -24,24 +24,26 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    height: "100%",
+    backgroundColor: "#e1e1e1"
   },
-  btn: {
-    borderWidth: 1,
-    borderColor: "#e2e8f0",
-    padding: 10,
-    paddingLeft: 16,
-    paddingRight: 16,
-    backgroundColor: "#fff",
-    borderRadius: 8,
-    marginBottom: 14,
-  },
-  btnText: {
-    fontFamily: "Hanken-Semibold",
-    fontSize: 14,
-    fontWeight: "600",
-    textAlign: "center",
-    color: "#334155",
-  },
+  // btn: {
+  //   borderWidth: 1,
+  //   borderColor: "#e2e8f0",
+  //   padding: 10,
+  //   paddingLeft: 16,
+  //   paddingRight: 16,
+  //   backgroundColor: "#fff",
+  //   borderRadius: 8,
+  //   marginBottom: 14,
+  // },
+  // btnText: {
+  //   fontFamily: "Hanken-Semibold",
+  //   fontSize: 14,
+  //   fontWeight: "600",
+  //   textAlign: "center",
+  //   color: "#334155",
+  // },
 });
 
 export default HomeScreen;

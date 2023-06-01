@@ -1,3 +1,4 @@
+import React from "react";
 import {
   ISActionButtons,
   ISItemsList,
@@ -7,9 +8,15 @@ import Nav from "../components/Nav";
 import ScreenLayout from "../components/ScreenLayout";
 
 const ItemsScreen = ({ navigation }) => {
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    });
+
+  }, [navigation]);
   return (
     <ScreenLayout>
-      <Nav />
+      <Nav menu={false}  navigation={navigation}/>
       <ISSearchBar />
       <ISItemsList navigation={navigation} />
       <ISActionButtons />

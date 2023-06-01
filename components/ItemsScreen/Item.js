@@ -7,7 +7,7 @@ const Item = ({ item, navigation }) => {
         width: "50%",
         padding: 6,
       }}
-      onPress={() => navigation.navigate("Specific Item", { item })}
+      onPress={() => navigation.navigate("Specific Item", { item, navigation })}
     >
       <View
         style={{
