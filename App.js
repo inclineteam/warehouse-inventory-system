@@ -50,24 +50,13 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           animation: "fade_from_bottom",
-          animationDuration: 100,
+          animationDuration: 200,
+          headerShown: false,
         }}
       >
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={headerStyles}
-        />
-        <Stack.Screen
-          name="Items"
-          component={ItemsScreen}
-          options={headerStyles}
-        />
-        <Stack.Screen
-          name="Specific Item"
-          component={SpecificItem}
-          options={headerStyles}
-        />
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Items" component={ItemsScreen} />
+        <Stack.Screen name="Specific Item" component={SpecificItem} />
       </Stack.Navigator>
       <StatusBar style="inverted" />
     </NavigationContainer>

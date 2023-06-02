@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import DetailItem from "./DetailItem";
 
 const Detail = ({ item }) => {
-  return (
+  return item ? (
     <View style={styles.container}>
       <Text style={styles.headerText}>Product Name:</Text>
       <View style={styles.detailsContainer}>
@@ -14,6 +14,13 @@ const Detail = ({ item }) => {
         <DetailItem label="Unit" value={item.unit} />
         <DetailItem label="Item Description" value={item.description} />
         <DetailItem label="Item Type" value={item.type} />
+      </View>
+    </View>
+  ) : (
+    <View style={styles.container}>
+      <Text style={styles.headerText}>Product Name:</Text>
+      <View style={styles.detailsContainer}>
+        <Text>No product detail found</Text>
       </View>
     </View>
   );

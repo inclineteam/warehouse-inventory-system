@@ -1,13 +1,16 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-const Item = ({ item, navigation }) => {
+const Item = ({ item }) => {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       style={{
         width: "50%",
         padding: 6,
       }}
-      onPress={() => navigation.navigate("Specific Item", { item, navigation })}
+      onPress={() => navigation.navigate("Specific Item", { item })}
     >
       <View
         style={{
@@ -18,18 +21,10 @@ const Item = ({ item, navigation }) => {
         }}
       >
         <View style={{ flexDirection: "row", justifyContent: "center" }}>
-          <Image
-            source={item.img}
-            style={{ width: 60, height: 60, resizeMode: "contain" }}
-          />
+          <Image source={item.img} style={{ width: 60, height: 60, resizeMode: "contain" }} />
         </View>
-        <Text style={{ textAlign: "center", fontFamily: "Hanken-Semibold" }}>
-          {item.code}
-        </Text>
-        <Text
-          numberOfLines={1}
-          style={{ textAlign: "center", fontFamily: "Hanken-Grotesk" }}
-        >
+        <Text style={{ textAlign: "center", fontFamily: "Hanken-Semibold" }}>{item.code}</Text>
+        <Text numberOfLines={1} style={{ textAlign: "center", fontFamily: "Hanken-Grotesk" }}>
           {item.description}
         </Text>
       </View>

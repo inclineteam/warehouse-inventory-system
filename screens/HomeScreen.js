@@ -1,19 +1,11 @@
 // this is just for navigating through screens while we design it
 // you can remove, or change the content of this screen
 
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Nav from "../components/Nav";
 import React from "react";
 
 const HomeScreen = ({ navigation }) => {
-  
-  // remove header
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: false,
-    });
-  }, [navigation]);
-
   return (
     <View style={styles.container}>
       <Nav menu={false} navigation={navigation} />
@@ -25,7 +17,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     height: "100%",
-    backgroundColor: "#e1e1e1"
+    backgroundColor: "#e1e1e1",
   },
   // btn: {
   //   borderWidth: 1,

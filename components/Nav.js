@@ -1,11 +1,14 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import logo from "../assets/logo.png";
 import React from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { TouchableOpacity } from "react-native-web";
+import Constants from "expo-constants";
+import NavMenuItem from "./NavMenuItem";
+import { useNavigation } from "@react-navigation/native";
 
-const Nav = ({ navigation, menu }) => {
+const Nav = ({ menu }) => {
   const [showMenu, setShowMenu] = React.useState(menu);
+  const navigation = useNavigation();
   // when change navigation, set showMenu to false
   React.useEffect(() => {
     setShowMenu(false);
@@ -49,13 +52,12 @@ const Nav = ({ navigation, menu }) => {
         style={{
           flex: 1,
           flexDirection: "column",
-          alignItems: "center",
           position: "absolute",
+          overflow: "hidden",
           display: showMenu ? "flex" : "none",
           right: 0,
           marginEnd: -20,
-          top: "100%",
-          padding: 28,
+          top: Constants.statusBarHeight + 60,
           borderTopLeftRadius: 15,
           borderBottomLeftRadius: 15,
           backgroundColor: "#fff",
@@ -63,96 +65,36 @@ const Nav = ({ navigation, menu }) => {
           borderWidth: 2,
         }}
       >
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          Home<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          Acc. Information<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          Inventory<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          Stocks<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Items");
-            }
-          }}
-        >
-          Items<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          Transactions<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          Returns<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          About<Image></Image>
-        </Text>
-        <Text
-          style={{ padding: 7, fontSize: 15, fontWeight: "bold" }}
-          onPress={() => {
-            {
-              navigation.navigate("Home");
-            }
-          }}
-        >
-          WIS Contacts<Image></Image>
-        </Text>
+        <NavMenuItem icon="home-outline" label="Home" navigateTo="Home" />
+        <NavMenuItem icon="person-circle-outline" label="Acc. Information" navigateTo="Home" />
+        <NavMenuItem icon="newspaper-outline" label="Inventory" navigateTo="Home" />
+        <NavMenuItem icon="cube-outline" label="Stocks" navigateTo="Home" />
+        <NavMenuItem icon="cart-outline" label="Items" navigateTo="Items" />
+        <NavMenuItem icon="swap-horizontal-outline" label="Transactions" navigateTo="Home" />
+        <NavMenuItem icon="arrow-undo-outline" label="Returns" navigateTo="Home" />
+        <NavMenuItem icon="information-circle-outline" label="About" navigateTo="Home" />
+        <NavMenuItem icon="call-outline" label="WIS Contacts" navigateTo="Home" />
+        <View style={{ padding: 30 }}>
+          <TouchableOpacity
+            style={{
+              borderWidth: 2,
+              borderColor: "#2824C3",
+              padding: 4,
+              paddingLeft: 18,
+              paddingRight: 20,
+              borderRadius: 9999,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "Hanken-Semibold",
+                textAlign: "center",
+              }}
+            >
+              Log out
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -162,7 +104,7 @@ export default Nav;
 
 const styles = StyleSheet.create({
   nav: {
-    marginTop: 15,
+    paddingTop: Constants.statusBarHeight + 10,
     flexDirection: "row",
     justifyContent: "space-between",
     zIndex: 1,

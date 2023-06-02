@@ -3,17 +3,10 @@ import Nav from "../components/Nav";
 import { SISActionButtons, SISDetails } from "../components/SpecificItemScreen";
 import React from "react";
 
-const SpecificItem = ({ navigation, route }) => {
-
-  React.useLayoutEffect(() => {
-    navigation.setOptions({
-      headerShown: false,
-  });
-
-  }, [navigation]);
+const SpecificItem = ({ route }) => {
   return (
     <ScreenLayout>
-      <Nav menu={false} navigation={navigation}/>
+      <Nav menu={false} />
       <SISDetails item={route.params.item} />
       <SISActionButtons />
     </ScreenLayout>
